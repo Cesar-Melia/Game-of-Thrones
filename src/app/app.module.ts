@@ -38,7 +38,6 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    TranslateHttpLoader
 
   ],
   providers: [],
