@@ -9,10 +9,13 @@ import { CharacterDetailPageComponent } from './pages/character-detail-page/char
 import { HousesPageComponent } from './pages/houses-page/houses-page.component';
 import { HouseDetailPageComponent } from './pages/house-detail-page/house-detail-page.component';
 import { ChronologyPageComponent } from './pages/chronology-page/chronology-page.component';
-import { HttpClientModule } from '@angular/common/http';
-import {TranslateModule} from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +31,13 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  }),
     TranslateHttpLoader
 
   ],
