@@ -29,6 +29,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot(),
+    TranslateHttpLoader
 
   ],
   providers: [],
