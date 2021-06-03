@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -10,8 +9,9 @@ import { HousesPageComponent } from './pages/houses-page/houses-page.component';
 import { HouseDetailPageComponent } from './pages/house-detail-page/house-detail-page.component';
 import { ChronologyPageComponent } from './pages/chronology-page/chronology-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SimplebarAngularModule } from 'simplebar-angular';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -37,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  }),
+    }),
+    SimplebarAngularModule
 
   ],
   providers: [],
