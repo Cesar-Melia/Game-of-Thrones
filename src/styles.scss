@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~bootstrap/scss/bootstrap-grid";
+//SETINGS
+@import "styles/settings/colors.settings";
 
-body {
-  background-color: #000000;
-  color: #ffffff;
-}
+//GENERIC
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~normalize.css/normalize.css";
+
+//ELEMENTS
+@import "styles/elements/body.elements";
+
+//BLOCKS
+
+//UTILITIES
