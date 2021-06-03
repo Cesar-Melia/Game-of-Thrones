@@ -8,7 +8,11 @@ export class CharactersService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(endPoint: string = ""){
+  getCharacters(){
+    return this.http.get(`https://api.got.show/api/show/characters/`)
+  }
+
+  getCharacter(endPoint: string){
     return this.http.get(`https://api.got.show/api/show/characters/${endPoint}`)
   }
 }
