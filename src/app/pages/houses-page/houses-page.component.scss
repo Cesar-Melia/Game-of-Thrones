@@ -1,0 +1,26 @@
+.c-houses {
+  margin: 0 80px;
+  max-width: 1024px;
+
+  &__house {
+    margin: 20px 0 00;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-white);
+  }
+
+  &__img {
+    align-self: center;
+    width: 80%;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
+
+.border {
+  border: solid 1px red;
+}
