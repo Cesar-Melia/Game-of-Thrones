@@ -8,11 +8,11 @@ export class HousesService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(){
+  getHouses(){
     return this.http.get(`https://api.got.show/api/show/houses/`)
   }
 
-  getCharacter(endPoint: string = ""){
+  getHouse(endPoint: string = ""){
     return this.http.get(`https://api.got.show/api/show/houses/${endPoint}`)
   }
 }
