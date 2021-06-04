@@ -1,1 +1,22 @@
-<p>characters-page works!</p>
+<!-- <section class="c-gallery d-flex justify-content-between flex-wrap">
+    <div class="row col-12 col-lg-2 col-md-4" *ngFor="let character of characters" routerLink="/characters/{{ character.id }}">
+        <figure class="c-gallery__item">
+            <div style="width: 100%">
+                <img src="{{ character.image }}" alt="{{ character.name }}" class="c-gallery__img" />
+            </div>
+            <figcaption class="c-gallery__text">
+                {{ character.name }}
+            </figcaption>
+        </figure>
+    </div>
+</section> -->
+
+<section class="c-gallery">
+    <div class="row c-gallery__item">
+        <div *ngFor="let character of characters" routerLink="/characters/{{ character.id }}" class="col">
+            <!-- <div [ngStyle]="{ 'background-image': 'url(${{character.image}})' }" class="c-gallery__img"></div> -->
+            <img src="{{ character.image }} " alt="{{ character.name }} " class="c-gallery__img" />
+            <h3>{{ character.name }}</h3>
+        </div>
+    </div>
+</section>

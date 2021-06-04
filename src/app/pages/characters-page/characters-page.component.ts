@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharactersService } from 'src/app/shared/Services/characters.service';
 
 @Component({
   selector: 'app-characters-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersPageComponent implements OnInit {
 
-  constructor() { }
+  characters: any;
+
+  constructor(private charactersService: CharactersService) { }
 
   ngOnInit(): void {
+    this.charactersService.getCharacters().subscribe((charactersData: any) => {
+      console.log(charactersData);
+      this.characters = charactersData;
+    })
   }
 
 }

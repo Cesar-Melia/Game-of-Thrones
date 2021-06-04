@@ -1,0 +1,37 @@
+.c-gallery {
+    &__img {
+        // max-height: 320px;
+        width: 250px;
+        height: 320px;
+        background-position: top;
+        background-size: cover;
+        object-fit: cover;
+        object-position: top;
+    }
+    &__item {
+        cursor: pointer;
+    }
+}
+
+// figure {
+//     display: flex;
+//     flex-flow: column;
+//     padding: 5px;
+//     // max-width: 220px;
+//     margin: auto;
+//     position: relative;
+// }
+// img {
+//     // max-width: 220px;
+//     height: 320px;
+//     width: 285px;
+// }
+// figcaption {
+//     width: 100%;
+//     position: absolute;
+//     bottom: 0px;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     color: #fff;
+//     padding: 21px 0px;
+//     text-align: center;
+// }
