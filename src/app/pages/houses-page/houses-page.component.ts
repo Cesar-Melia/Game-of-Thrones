@@ -15,7 +15,9 @@ export class HousesPageComponent implements OnInit {
   ngOnInit(): void {
     this.housesService.getHouses().subscribe((housesData: any) => {
       console.log(housesData);
-      this.houses = housesData;
+      
+      this.houses = housesData.filter((house: any)=> house.logoURL) 
+      console.log(this.houses.id);
     })
   }
 

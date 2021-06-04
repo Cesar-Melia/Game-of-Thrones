@@ -1,0 +1,18 @@
+.c-gallery {
+    &__img {
+        // max-height: 320px;
+        width: 250px;
+        height: 320px;
+        background-position: top;
+        background-size: cover;
+        object-fit: cover;
+        object-position: top;
+    }
+    &__item {
+        cursor: pointer;
+    }
+}
+
+ngx-simplebar {
+    height: 80vh;
+}

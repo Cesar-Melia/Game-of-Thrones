@@ -1,1 +1,13 @@
-<p>houses-page works!</p>
+<section *ngIf="houses" class="c-houses d-flex justify content-bcenter flex-wrap">
+    <!-- <ngx-simplebar [options]=""> -->
+    <figure *ngFor="let house of houses"
+        class="c-houses__house d-flex justify-content-centerflex-column col-12 col-md-4 col-lg-2">
+        <a class="c-houses__link d-flex flex-column justify-content-between" routerLink="/houses/{{house._id}}">
+            <div class="d-flex justify-content-center">
+                <img src="{{house.logoURL}}" alt="{{house.name}}" class="c-houses__img">
+            </div>
+            <figcaption class="c-houses__text">{{house.name}}</figcaption>
+        </a>
+    </figure>
+    <!-- </ngx-simplebar> -->
+</section>
