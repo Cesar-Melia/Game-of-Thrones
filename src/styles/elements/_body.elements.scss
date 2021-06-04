@@ -1,8 +1,5 @@
 body {
-  // background-color: var(--color-background);
-  background-image: url(../../assets/images/got-iron-throne.jpg) ;
-  background-size: cover;
-  background-position: center center;
-
+  background-color: var(--color-background);
   color: var(--color-primary);
+  font-family: "got", Arial;
 }
