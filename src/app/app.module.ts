@@ -14,6 +14,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { HeaderComponent } from './core/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './core/footer/footer.component';
 
 
 
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HousesPageComponent,
     HouseDetailPageComponent,
     ChronologyPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
