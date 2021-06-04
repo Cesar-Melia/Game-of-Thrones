@@ -1,6 +1,5 @@
 .c-houses {
   margin: 0 80px;
-  max-width: 1024px;
 
   &__house {
     margin: 20px 0 00;
@@ -21,6 +20,18 @@
   }
 }
 
+ngx-simplebar {
+  height: 80vh;
+}
+
+simplebar-scrollbar {
+  color: red;
+}
+
 .border {
   border: solid 1px red;
+}
+
+::ng-deep .simplebar-scrollbar::before {
+  background-color: white !important;
 }

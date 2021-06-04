@@ -12,7 +12,8 @@ export class HousesService {
     return this.http.get(`https://api.got.show/api/show/houses/`)
   }
 
-  getHouse(endPoint: string = ""){
-    return this.http.get(`https://api.got.show/api/show/houses/${endPoint}`)
+  getHouse(endPoint: string){
+
+    return this.http.get("https://api.got.show/api/show/houses/" + endPoint)
   }
 }

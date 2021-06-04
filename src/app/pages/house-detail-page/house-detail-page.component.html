@@ -1,1 +1,4 @@
-<p>house-detail-page works!</p>
+<section *ngIf="house" class="c-house-detail">
+    {{house.logoURL}}
+    <img src="{{house.logoURL}}" class="c-house-detail__img">
+</section>
