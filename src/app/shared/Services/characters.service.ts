@@ -12,7 +12,7 @@ export class CharactersService {
     return this.http.get(`https://api.got.show/api/show/characters/`)
   }
 
-  getCharacter(endPoint: string){
-    return this.http.get(`https://api.got.show/api/show/characters/${endPoint}`)
+  getCharacter(endPoint: any){
+    return this.http.get("https://api.got.show/api/show/characters/" + endPoint)
   }
 }

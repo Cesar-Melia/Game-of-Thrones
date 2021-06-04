@@ -1,1 +1,11 @@
-<p>character-detail-page works!</p>
+<section *ngIf="character" class="c-character">
+    <div class="row">
+        <div class="col d-flex justify-content-center flex-column align-items-center">
+            <img src="{{ character.image }}" alt="{{ character.name }}" class="c-character__img" />
+            <h2 class="c-character__name">{{ character.name }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</section>

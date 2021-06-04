@@ -1,0 +1,13 @@
+.c-character {
+    &__img {
+        width: 250px;
+        height: 320px;
+        background-position: top;
+        background-size: cover;
+        object-fit: cover;
+        object-position: top;
+    }
+    &__name {
+        font-size: 36px;
+    }
+}
