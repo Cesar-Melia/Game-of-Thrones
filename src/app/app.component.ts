@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+// import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'game-of-thrones';
-  langs: string[] = [];
 
+  constructor(){}
 
-  constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('es');
-    this.translate.use('en');
-    this.translate.addLangs(['en', 'es']);
-  this.langs = this.translate.getLangs();
-  this.translate.stream('HELLO')
-  .subscribe((res: string) => {
-  });
-  this.translate.stream('HOME')
-  .subscribe((res: string) => {
-  });
-  }
-  changeLang(lang: string){
-    this.translate.use(lang);
-    }
 }
