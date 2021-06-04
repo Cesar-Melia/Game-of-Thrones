@@ -1,9 +1,9 @@
 <section class="c-gallery">
     <ngx-simplebar>
-        <div class="row c-gallery__item">
-            <div *ngFor="let character of characters" routerLink="/characters/{{ character.id }}" class="col">
+        <div class="d-flex flex-wrap justify-content-center c-gallery__item">
+            <div *ngFor="let character of characters" routerLink="/characters/{{ character.id }}" class="c-gallery__div col d-flex align-items-center flex-column p-1">
                 <img src="{{ character.image }} " alt="{{ character.name }} " class="c-gallery__img" />
-                <h3>{{ character.name }}</h3>
+                <h3 class="c-gallery__title">{{ character.name }}</h3>
             </div>
         </div>
     </ngx-simplebar>
