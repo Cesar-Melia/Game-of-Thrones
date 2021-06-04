@@ -1,3 +1,16 @@
 {
-    "HELLO": "Hello world"
+    "CHARACTERS": "CHARACTERS",
+    "HOUSES": "HOUSES",
+    "CRONOLOGY": "CRONOLOGY",
+    "HOUSE": "HOUSE",
+    "ALLIANCES": "ALLIANCES",
+    "APPEARANCES": "APPEARANCES",
+    "DAD": "DAD",
+    "DECENDENTS": "DECENDENTS",
+    "TITLES": "TITLES",
+    "MOTTO": "MOTTO",
+    "CAMPUS": "CAMPUS",
+    "REGION": "REGION",
+    "RELIGIONS": "RELIGIONS",
+    "FOUNDATION": "FOUNDATION"
 }

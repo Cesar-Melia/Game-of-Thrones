@@ -1,3 +1,12 @@
+<app-header></app-header>
 <main>
     <router-outlet></router-outlet>
 </main>
+
+<label class="c-label">
+    <select #langSelect (change)="changeLang (langSelect.value)">
+        <option *ngFor="let lang of langs" [value]="lang">
+            {{ lang }}
+        </option>
+    </select>
+</label>

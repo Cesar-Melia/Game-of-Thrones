@@ -12,9 +12,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SimplebarAngularModule } from 'simplebar-angular';
+import { HeaderComponent } from './core/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -25,7 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CharacterDetailPageComponent,
     HousesPageComponent,
     HouseDetailPageComponent,
-    ChronologyPageComponent
+    ChronologyPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
     }),
-    SimplebarAngularModule
+    SimplebarAngularModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
