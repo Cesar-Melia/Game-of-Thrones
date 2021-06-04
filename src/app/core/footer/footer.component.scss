@@ -1,0 +1,14 @@
+.c-footer {
+
+
+  &__nav {
+    display: flex;
+    justify-content: space-around;
+    
+  }
+
+  &__link {
+    font-family: "got1";
+    color: #fff;
+  }
+}
