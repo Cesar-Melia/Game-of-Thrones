@@ -1,37 +1,33 @@
 .c-houses {
-  margin: 0 80px;
-
-  &__house {
-    margin: 20px 0 00;
-  }
-
-  &__link {
-    text-decoration: none;
-    color: var(--color-white);
-  }
-
-  &__img {
-    align-self: center;
-    width: 80%;
-  }
-
-  &__text {
-    text-align: center;
-  }
+    margin: 0 80px;
+    &__house {
+        margin: 20px 0 00;
+    }
+    &__link {
+        text-decoration: none;
+        color: var(--color-white);
+    }
+    &__img {
+        align-self: center;
+        width: 80%;
+    }
+    &__text {
+        text-align: center;
+    }
 }
 
 ngx-simplebar {
-  height: 80vh;
+    height: 72vh;
 }
 
 simplebar-scrollbar {
-  color: red;
+    color: red;
 }
 
 .border {
-  border: solid 1px red;
+    border: solid 1px red;
 }
 
 ::ng-deep .simplebar-scrollbar::before {
-  background-color: white !important;
+    background-color: white !important;
 }

@@ -1,10 +1,9 @@
 <div class="c-header">
     <div class="c-header__buscar">
-        <button>buscar</button>
+        <img class="c-header__search-icon" src="../../../assets/images/search 1.svg" />
         <input type="text" class="c-header__text" placeholder="Buscar..." />
         <p class="c-header__p"></p>
     </div>
-    <nav></nav>
     <div class="c-label">
         <select #langSelect (change)="changeLang(langSelect.value)">
       <option *ngFor="let lang of langs" [value]="lang">
