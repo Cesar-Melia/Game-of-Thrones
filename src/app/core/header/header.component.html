@@ -1,8 +1,8 @@
 <div class="c-header">
-  <div *ngIf="detailPage" mat-raised-button (click)="goBack()"><span class="icon-left-arrow"></span><span>Volver</span></div>
+  <div *ngIf="detailPage" mat-raised-button (click)="goBack()"><span class="icon-left-arrow"></span><span>{{ 'Volver' | translate}}</span></div>
   <div *ngIf="!detailPage" class="c-header__search"  >
     <span class="c-header__search-icon icon-search"></span>
-    <input type="text" class="c-header__text" placeholder="Buscar..." />
+    <input type="text" class="c-header__text" placeholder="{{'Buscar' | translate}}..." />
     <p class="c-header__p"></p>
   </div>
 
@@ -17,12 +17,5 @@
 
       <img (click)="changeLang('en')" class="c-header__english" src="../../assets/images/uk.png" id="main-image">
     </div>
-    <!-- <div class="c-header__translate">
-      <select #langSelect (change)="changeLang(langSelect.value)">
-        <option *ngFor="let lang of langs" [value]="lang">
-          {{ lang }}
-        </option>
-      </select>
-    </div> -->
   </div>
 </div>
