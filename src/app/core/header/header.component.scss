@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,10 +15,14 @@
   justify-content: space-between;
   align-items: center;
   color: var(--color-primary);
-  margin: 0 80px;
   font-family: "lato";
+  padding: 0 80px;
 
-  &__buscar {
+  @include media-breakpoint-down(lg) {
+    padding: 0 40px;
+  }
+
+  &__search {
     border-bottom: 2px var(--color-primary) solid;
   }
 
@@ -25,21 +33,55 @@
     outline: none;
     border: 0;
     padding-bottom: 4px;
-  }
 
-  &__p {
-    border-bottom: var(--color-primary);
-    width: 100px;
-    color: blue;
+    @include media-breakpoint-down(lg) {
+      width: 200px;
+    }
   }
 
   &__search-icon {
     margin-right: 12px;
   }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-primary);
+
+    &:hover {
+    }
+  }
+
+  &__icons {
+  }
+
+  &__home {
+    font-size: 49px;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 32px;
+    }
+  }
+
+  &__spanish {
+    width: 64px;
+    margin: 0 19px;
+
+    @include media-breakpoint-down(lg) {
+      width: 32px;
+    }
+  }
+
+  &__english {
+    width: 64px;
+
+    @include media-breakpoint-down(lg) {
+      width: 32px;
+    }
+  }
 }
 
-.c-label {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-}
+// .c-label {
+//   position: absolute;
+//   top: 25px;
+//   right: 25px;
+// }

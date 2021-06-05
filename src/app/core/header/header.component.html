@@ -1,14 +1,24 @@
 <div class="c-header">
-    <div class="c-header__buscar">
-        <img class="c-header__search-icon" src="../../../assets/images/search 1.svg" />
-        <input type="text" class="c-header__text" placeholder="Buscar..." />
-        <p class="c-header__p"></p>
+  <div class="c-header__search">
+    <img class="c-header__search-icon" src="../../../assets/images/search 1.svg" />
+    <input type="text" class="c-header__text" placeholder="Buscar..." />
+    <p class="c-header__p"></p>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="c-header__icons d-flex justify-content-between align-items-center">
+      <a class="c-header__link" routerLink="" routerLinkActiveOptions="{exact:true}"><span
+          class="c-header__home icon-home align-self-center"></span></a>
+      <img class="c-header__spanish " src="../../assets/images/spain.png">
+      <img class="c-header__english" src="../../assets/images/uk.png">
+
     </div>
-    <div class="c-label">
-        <select #langSelect (change)="changeLang(langSelect.value)">
-      <option *ngFor="let lang of langs" [value]="lang">
-        {{ lang }}
-      </option>
-    </select>
+    <div class="c-header__translate">
+      <select #langSelect (change)="changeLang(langSelect.value)">
+        <option *ngFor="let lang of langs" [value]="lang">
+          {{ lang }}
+        </option>
+      </select>
     </div>
+  </div>
 </div>
