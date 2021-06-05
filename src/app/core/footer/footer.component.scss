@@ -1,15 +1,17 @@
 .c-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 64px;
+
+  &__nav {
     width: 100%;
-    position: absolute;
-    bottom: 64px;
-    &__nav {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-    &__link {
-        font-family: "got1";
-        color: #fff;
-        font-size: 36px;
-    }
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__link {
+    font-family: "got1";
+    color: var(--color-primary);
+    font-size: 36px;
+  }
 }

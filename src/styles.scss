@@ -3,19 +3,16 @@
 //SETINGS
 @import "styles/settings/colors.setings";
 @import "styles/settings/fonts.setings";
+
 //GENERIC
 @import "~bootstrap/scss/bootstrap-grid";
 @import "~normalize.css/normalize.css";
+
 //ELEMENTS
 @import "styles/elements/body.elements";
-//BLOCKS
-//UTILITIES
-html,
-body {
-    height: 100%;
-}
+@import "styles/elements/html.elements";
 
-body {
-    margin: 0;
-    font-family: 'Roboto', "Helvetica Neue", sans-serif;
-}
+//BLOCKS
+
+//UTILITIES
+@import "styles/utilities/borders";
