@@ -16,10 +16,10 @@
   align-items: center;
   color: var(--color-primary);
   font-family: "lato";
-  padding: 0 80px;
+  padding: 0 156px;
 
   @include media-breakpoint-down(xl) {
-    padding: 0 40px;
+    padding: 0 80px;
   }
 
   &__search {
