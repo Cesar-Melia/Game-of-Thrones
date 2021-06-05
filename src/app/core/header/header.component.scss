@@ -18,7 +18,7 @@
   font-family: "lato";
   padding: 0 80px;
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     padding: 0 40px;
   }
 
@@ -34,13 +34,18 @@
     border: 0;
     padding-bottom: 4px;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       width: 200px;
     }
   }
 
   &__search-icon {
     margin-right: 12px;
+    font-size: 21px;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 16px;
+    }
   }
 
   &__link {
@@ -48,6 +53,7 @@
     color: var(--color-primary);
 
     &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -57,7 +63,7 @@
   &__home {
     font-size: 49px;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       font-size: 32px;
     }
   }
@@ -66,7 +72,7 @@
     width: 64px;
     margin: 0 19px;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       width: 32px;
     }
   }
@@ -74,7 +80,7 @@
   &__english {
     width: 64px;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       width: 32px;
     }
   }
