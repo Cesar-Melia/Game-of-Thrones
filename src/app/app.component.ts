@@ -14,7 +14,9 @@ export class AppComponent {
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {
-      if (window.location.href.includes('characters/' || 'houses/')) {
+      if (window.location.href.includes('characters/')) {
+        this.detailPage = true;
+      } else if (window.location.href.includes('houses/')) {
         this.detailPage = true;
       } else {
         this.detailPage = false;
