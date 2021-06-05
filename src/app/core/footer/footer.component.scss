@@ -17,6 +17,15 @@
     font-family: "got1";
     color: var(--color-primary);
     font-size: 36px;
+    text-decoration: none;
+
+    &--active {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     @include media-breakpoint-down(xl) {
       font-size: 24px;
