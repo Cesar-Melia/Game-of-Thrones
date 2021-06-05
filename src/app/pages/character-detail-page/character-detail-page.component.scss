@@ -1,6 +1,6 @@
 .c-character {
   &__img {
-    width: 250px;
+    width: 248px;
     height: 320px;
     background-position: top;
     background-size: cover;
@@ -18,17 +18,21 @@
   }
   &__title-desc {
     font-size: 24px;
-    font-family: "got1";
   }
   &__text {
+    font-family: "lato";
     font-size: 16px;
   }
 }
 
 ngx-simplebar {
-  height: 320px;
+  height: 231px;
 }
 
 ::ng-deep .simplebar-scrollbar::before {
   background-color: white !important;
 }
+
+// .simplebar-content-wrapper {
+//   height: 120px;
+// }
