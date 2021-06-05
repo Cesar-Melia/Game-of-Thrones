@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
 .c-footer {
   width: 100%;
   position: absolute;
@@ -13,5 +17,9 @@
     font-family: "got1";
     color: var(--color-primary);
     font-size: 36px;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 24px;
+    }
   }
 }
