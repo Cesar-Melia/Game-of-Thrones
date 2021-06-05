@@ -10,21 +10,18 @@ import { HousesService } from 'src/app/shared/Services/houses.service';
 export class HouseDetailPageComponent implements OnInit {
 
   house: any;
-  houseName: any
-
-  constructor(private housesService: HousesService, private route: ActivatedRoute) { }
+  
+  constructor(private houseService: HousesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.route.paramMap.subscribe(params => {
-      this.houseName = params.get('houseName');
-      console.log(this.houseName);
-    })  
+      const houseName = params.get('houseName');
+      console.log(houseName)    
 
-    this.housesService.getHouse(this.houseName).subscribe((houseData: any) => {
-      
-      this.house = houseData;
-      console.log(houseData);
-    })    
-  }
+    this.houseService.getHouse(this.house).subscribe(house => {
+      this.house = house;
+    });    
+  });
+}
 }

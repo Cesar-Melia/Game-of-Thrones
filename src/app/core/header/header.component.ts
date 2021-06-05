@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -11,7 +13,7 @@ export class HeaderComponent implements OnInit {
   langs: string[] = [];
 
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private route: ActivatedRoute, private _location: Location) {
     this.translate.setDefaultLang('en');
     this.translate.use('es');
     this.translate.addLangs(['es', 'en']);
@@ -29,7 +31,11 @@ export class HeaderComponent implements OnInit {
     changeToEnglish(){
       this.translate.use('en');
     }
-
+ 
+    goBack(){
+      this._location.back();
+    }
+   
   ngOnInit(): void {
   }
 

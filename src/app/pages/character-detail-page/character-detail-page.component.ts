@@ -22,6 +22,8 @@ export class CharacterDetailPageComponent implements OnInit {
         console.log('paco --> ', character);
         this.character = character;
       });
+      
+
     });
   }
 }

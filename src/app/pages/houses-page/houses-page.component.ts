@@ -17,7 +17,6 @@ export class HousesPageComponent implements OnInit {
       console.log(housesData);
       
       this.houses = housesData.filter((house: any)=> house.logoURL) 
-      console.log(this.houses.id);
     })
   }
 
