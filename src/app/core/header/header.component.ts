@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -11,9 +11,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
 
   langs: string[] = [];
+  detailPage:Boolean = false;
 
-
-  constructor(private translate: TranslateService, private route: ActivatedRoute, private _location: Location) {
+  constructor(private translate: TranslateService, private route: ActivatedRoute, private _location: Location, private router: Router) {
     this.translate.setDefaultLang('en');
     this.translate.use('es');
     this.translate.addLangs(['es', 'en']);
@@ -22,8 +22,20 @@ export class HeaderComponent implements OnInit {
     .subscribe((res: string) => {
     });
     this.translate.stream('HOME').subscribe((res: string) => {});
+
+    router.events.subscribe((val) =>{
+      if(window.location.href.includes('characters/')) {
+        this.detailPage= true;
+      } else if (window.location.href.includes('houses/')){
+        this.detailPage= true;
+      }
+      else {
+        this.detailPage = false;
+      }
+      })
+
   }
-  
+
   changeLang(lang: string){
     this.translate.use(lang);
     }
@@ -38,7 +50,6 @@ export class HeaderComponent implements OnInit {
    
   ngOnInit(): void {
   }
-
 }
 
 
