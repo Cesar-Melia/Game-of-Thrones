@@ -71,6 +71,10 @@
   &__spanish {
     width: 64px;
     margin: 0 19px;
+    cursor: pointer;
+    &:hover {
+      width: 66px;
+    }
 
     @include media-breakpoint-down(xl) {
       width: 32px;
@@ -79,7 +83,10 @@
 
   &__english {
     width: 64px;
-
+    cursor: pointer;
+    &:hover {
+    width: 66px;
+    }
     @include media-breakpoint-down(xl) {
       width: 32px;
     }
