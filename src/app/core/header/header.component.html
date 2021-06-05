@@ -7,18 +7,21 @@
 
   <div class="d-flex justify-content-between align-items-center">
     <div class="c-header__icons d-flex justify-content-between align-items-center">
+
       <a class="c-header__link" routerLink="" routerLinkActiveOptions="{exact:true}"><span
           class="c-header__home icon-home align-self-center"></span></a>
-      <img class="c-header__spanish " src="../../assets/images/spain.png">
-      <img class="c-header__english" src="../../assets/images/uk.png">
 
+      <img (click)="changeLang('es')" class="c-header__spanish " src="../../assets/images/spain.png"
+        onclick="setSrc('main-image', this.src)">
+
+      <img (click)="changeLang('en')" class="c-header__english" src="../../assets/images/uk.png" id="main-image">
     </div>
-    <div class="c-header__translate">
+    <!-- <div class="c-header__translate">
       <select #langSelect (change)="changeLang(langSelect.value)">
         <option *ngFor="let lang of langs" [value]="lang">
           {{ lang }}
         </option>
       </select>
-    </div>
+    </div> -->
   </div>
 </div>

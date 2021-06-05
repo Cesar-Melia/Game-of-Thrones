@@ -12,9 +12,9 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('es');
-    this.translate.use('en');
-    this.translate.addLangs(['en', 'es']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('es');
+    this.translate.addLangs(['es', 'en']);
     this.langs = this.translate.getLangs();
     this.translate.stream('HELLO')
     .subscribe((res: string) => {
@@ -26,7 +26,14 @@ export class HeaderComponent implements OnInit {
     this.translate.use(lang);
     }
 
+    changeToEnglish(){
+      this.translate.use('en');
+    }
+
   ngOnInit(): void {
   }
 
 }
+
+
+
