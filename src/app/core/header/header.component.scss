@@ -53,7 +53,7 @@
     color: var(--color-primary);
 
     &:hover {
-      text-decoration: underline;
+      color: var(--color-grey);
     }
   }
 
@@ -72,8 +72,14 @@
     width: 64px;
     margin: 0 19px;
     cursor: pointer;
+
     &:hover {
-      width: 66px;
+      border: solid 1px var(--color-primary);
+      border-radius: 2px;
+    }
+
+    &--active {
+      border: 2px;
     }
 
     @include media-breakpoint-down(xl) {
@@ -84,9 +90,12 @@
   &__english {
     width: 64px;
     cursor: pointer;
+
     &:hover {
-    width: 66px;
+      border: solid 1px var(--color-primary);
+      border-radius: 2px;
     }
+
     @include media-breakpoint-down(xl) {
       width: 32px;
     }
