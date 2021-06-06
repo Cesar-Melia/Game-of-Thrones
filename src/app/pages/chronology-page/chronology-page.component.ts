@@ -7,25 +7,31 @@ import { CharactersService } from 'src/app/shared/Services/characters.service';
   styleUrls: ['./chronology-page.component.scss'],
 })
 export class ChronologyPageComponent implements OnInit {
-  characters: any;
+  charactersFiltered: any;
+
+  charactersAge: any[] = [];
 
   constructor(private charactersService: CharactersService) {}
 
   ngOnInit(): void {
     this.charactersService.getCharacters().subscribe((charactersData: any) => {
-      console.log(charactersData);
-
-      this.characters = charactersData.sort((a: any, b: any) => {
-        if (a.age[0] > b.age[0]) {
-          return 1;
-        }
-        if (a.age[0] < b.age[0]) {
-          return -1;
-        }
-        return 0;
+      this.charactersFiltered = charactersData.filter((character: any) => {
+        return character.age && character.age.age;
       });
 
-      console.log(this.characters);
+      this.charactersFiltered = this.charactersFiltered.sort(
+        (a: any, b: any) => {
+          if (a.age.age > b.age.age) {
+            return 1;
+          }
+          if (a.age.age < b.age.age) {
+            return -1;
+          }
+          return 0;
+        }
+      );
+
+      console.log('paco -->', this.charactersFiltered);
     });
   }
 }

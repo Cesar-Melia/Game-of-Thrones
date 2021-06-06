@@ -1,9 +1,19 @@
-<section class="c-chrono" *ngIf="characters">
-  <ngx-simplebar>
-    <div class="c-chrono__container">
-    </div>
-  </ngx-simplebar>
+<section class="c-chrono" *ngIf="charactersFiltered">
+    <ngx-simplebar>
+        <div class="c-chrono__container" *ngFor="let character of charactersFiltered; let i = index">
+            <div class="timeline">
+                <div class="contenedor" [ngClass]="i % 2 ? 'right' : 'left'">
+                    <div class="content">
+                        <p>
+                            {{ character.age.age }}
+                        </p>
+                        <p>
+                            {{ character.name }}
+                        </p>
+                        <img class="c-chrono__img" src="{{ character.image }}" alt="{{ character.name }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngx-simplebar>
 </section>
-
-
-
