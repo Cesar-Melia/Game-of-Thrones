@@ -1,8 +1,8 @@
 {
     "PERSONAJES": "PERSONAJES",
     "CASAS": "CASAS",
-    "CRONOLOGIA": "CRONOLOGIA",
     "CASA": "CASA",
+    "CRONOLOGIA": "CRONOLOGIA",
     "ALIANZAS": "ALIANZAS",
     "APARICIONES": "APARICIONES",
     "PADRE": "PADRE",
@@ -11,7 +11,7 @@
     "LEMA": "LEMA",
     "SEDE": "SEDE",
     "REGION": "REGION",
-    "RELIGION": "RELIGION",
+    "RELIGIONES": "RELIGIONES",
     "FUNDACION": "FUNDACION",
     "Volver": "Volver",
     "Buscar": "Buscar"

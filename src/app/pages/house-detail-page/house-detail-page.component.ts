@@ -5,23 +5,26 @@ import { HousesService } from 'src/app/shared/Services/houses.service';
 @Component({
   selector: 'app-house-detail-page',
   templateUrl: './house-detail-page.component.html',
-  styleUrls: ['./house-detail-page.component.scss']
+  styleUrls: ['./house-detail-page.component.scss'],
 })
 export class HouseDetailPageComponent implements OnInit {
-
   house: any;
-  
-  constructor(private houseService: HousesService, private route: ActivatedRoute) { }
+  houseName: string = '';
+
+  constructor(
+    private houseService: HousesService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const houseName = params.get('houseName');
-      console.log(houseName)    
+      console.log(houseName);
 
-    this.houseService.getHouse(this.house).subscribe(house => {
-      this.house = house;
-    });    
-  });
-}
+      this.houseService.getHouse(this.houseName).subscribe((house) => {
+        console.log('La casa elegida es -> ' + house);
+        this.house = house;
+      });
+    });
+  }
 }
