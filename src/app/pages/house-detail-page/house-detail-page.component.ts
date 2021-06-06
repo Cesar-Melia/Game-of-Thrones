@@ -9,7 +9,6 @@ import { HousesService } from 'src/app/shared/Services/houses.service';
 })
 export class HouseDetailPageComponent implements OnInit {
   house: any;
-  houseName: string = '';
 
   constructor(
     private houseService: HousesService,
@@ -21,7 +20,7 @@ export class HouseDetailPageComponent implements OnInit {
       const houseName = params.get('houseName');
       console.log(houseName);
 
-      this.houseService.getHouse(this.houseName).subscribe((house) => {
+      this.houseService.getHouse(houseName).subscribe((house) => {
         console.log('La casa elegida es -> ' + house);
         this.house = house;
       });

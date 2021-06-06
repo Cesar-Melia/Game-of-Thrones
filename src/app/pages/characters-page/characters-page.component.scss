@@ -20,6 +20,7 @@
   &__div {
     position: relative;
     margin-bottom: 68px;
+    cursor: pointer;
 
     &:hover .c-gallery__title {
       position: absolute;
@@ -44,10 +45,6 @@
     height: 320px;
     object-fit: cover;
     object-position: top;
-  }
-
-  &__item {
-    cursor: pointer;
   }
 
   &__title {
