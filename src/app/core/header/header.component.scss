@@ -48,6 +48,22 @@
     }
   }
 
+  &__back {
+    cursor: pointer;
+    &:hover {
+      color: var(--color-grey);
+    }
+  }
+
+  &__back-icon {
+    font-size: 29px;
+    margin-right: 20px;
+  }
+
+  &__back-text {
+    font-size: 24px;
+  }
+
   &__link {
     text-decoration: none;
     color: var(--color-primary);

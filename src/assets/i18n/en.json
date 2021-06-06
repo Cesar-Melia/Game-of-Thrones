@@ -5,8 +5,8 @@
     "CRONOLOGIA": "CRONOLOGY",
     "ALIANZAS": "ALLIANCES",
     "APARICIONES": "APPEARANCES",
-    "PADRE": "DAD",
-    "DESCENDIENTES": "DECENDENTS",
+    "PADRE": "FATHER",
+    "DESCENDIENTES": "DESCENDANTS",
     "TITULOS": "TITLES",
     "LEMA": "MOTTO",
     "CAMPUS": "CAMPUS",
@@ -15,5 +15,4 @@
     "FUNDACION": "FOUNDATION",
     "Volver": "Back",
     "Buscar": "Search"
-
 }

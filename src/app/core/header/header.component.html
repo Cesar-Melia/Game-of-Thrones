@@ -1,6 +1,10 @@
 <div class="c-header">
-  <div *ngIf="detailPage" mat-raised-button (click)="goBack()"><span class="icon-left-arrow"></span><span>{{ 'Volver' | translate}}</span></div>
-  <div *ngIf="!detailPage" class="c-header__search"  >
+  <div *ngIf="detailPage" mat-raised-button (click)="goBack()"
+    class="c-header__back d-flex justify-content-between align-items-center">
+    <span class="c-header__back-icon icon-back"></span>
+    <span class="c-header__back-text">{{ 'Volver' | translate}}</span>
+  </div>
+  <div *ngIf="!detailPage" class="c-header__search">
     <span class="c-header__search-icon icon-search"></span>
     <input type="text" class="c-header__text" placeholder="{{'Buscar' | translate}}..." />
     <p class="c-header__p"></p>
