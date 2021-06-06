@@ -1,4 +1,8 @@
 .c-character {
+  &__block {
+    margin-bottom: 30px;
+  }
+
   &__img {
     width: 248px;
     height: 320px;
@@ -32,7 +36,3 @@ ngx-simplebar {
 ::ng-deep .simplebar-scrollbar::before {
   background-color: white !important;
 }
-
-// .simplebar-content-wrapper {
-//   height: 120px;
-// }
