@@ -4,17 +4,15 @@
             <img src="{{ character.image }}" alt="{{ character.name }}" class="c-character__img" />
             <h2 class="c-character__name">{{ character.name }}</h2>
         </div>
-        <div class="d-flex justify-content-center align-items-center flex-wrap c-character__info">
+        <div class="d-flex justify-content-center flex-wrap c-character__info">
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
-                <h2 class="c-character__title-desc">{{'CASA' | translate}}</h2>
+                <h2 class="c-character__title-desc">{{ "CASA" | translate }}</h2>
                 <ngx-simplebar>
-                    <img height="150px"
-                        src="https://vignette.wikia.nocookie.net/gameofthrones/images/e/e5/House-Blackfyre-Main-Shield.PNG/revision/latest/scale-to-width-down/350?cb=20170511001004"
-                        alt="" />
+                    <img height="150px" src="https://vignette.wikia.nocookie.net/gameofthrones/images/e/e5/House-Blackfyre-Main-Shield.PNG/revision/latest/scale-to-width-down/350?cb=20170511001004" alt="" />
                 </ngx-simplebar>
             </div>
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
-                <h2 class="c-character__title-desc">{{'ALIANZAS' | translate}}</h2>
+                <h2 class="c-character__title-desc">{{ "ALIANZAS" | translate }}</h2>
                 <ngx-simplebar>
                     <p *ngFor="let alieance of character.allegiances" class="c-character__text">
                         {{ alieance }}
@@ -22,7 +20,7 @@
                 </ngx-simplebar>
             </div>
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
-                <h2 class="c-character__title-desc">{{'APARICIONES' | translate}}</h2>
+                <h2 class="c-character__title-desc">{{ "APARICIONES" | translate }}</h2>
                 <ngx-simplebar>
                     <p *ngFor="let apparition of character.appearances" class="c-character__text">
                         {{ apparition }}
@@ -30,7 +28,7 @@
                 </ngx-simplebar>
             </div>
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
-                <h2 class="c-character__title-desc">{{'PADRE' | translate}}</h2>
+                <h2 class="c-character__title-desc">{{ "PADRE" | translate }}</h2>
                 <ngx-simplebar>
                     <p class="c-character__text">
                         {{ character.father }}
@@ -38,7 +36,9 @@
                 </ngx-simplebar>
             </div>
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
-                <h2 class="c-character__title-desc">{{'DESCENDIENTES' | translate}}</h2>
+                <h2 class="c-character__title-desc">
+                    {{ "DESCENDIENTES" | translate }}
+                </h2>
                 <ngx-simplebar>
                     <p *ngFor="let sibling of character.siblings" class="c-character__text">
                         {{ sibling }}
@@ -46,7 +46,7 @@
                 </ngx-simplebar>
             </div>
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
-                <h2 class="c-character__title-desc">{{'TITULOS' | translate}}</h2>
+                <h2 class="c-character__title-desc">{{ "TITULOS" | translate }}</h2>
                 <ngx-simplebar>
                     <p *ngFor="let title of character.titles" class="c-character__text">
                         {{ title }}
