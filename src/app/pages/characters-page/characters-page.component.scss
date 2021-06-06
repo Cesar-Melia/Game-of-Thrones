@@ -3,10 +3,18 @@
 @import "~bootstrap/scss/mixins/breakpoints";
 
 .c-gallery {
-  margin: 35px 156px;
+  margin: 35px 90px 35px 156px;
 
   @include media-breakpoint-down(xl) {
-    margin: 35px 80px;
+    margin: 35px 47px 35px 80px;
+  }
+
+  &__container {
+    margin-right: 66px;
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
   }
 
   &__div {
@@ -32,11 +40,8 @@
   }
 
   &__img {
-    // max-height: 320px;
     width: 248px;
     height: 320px;
-    background-position: top;
-    background-size: cover;
     object-fit: cover;
     object-position: top;
   }
@@ -55,5 +60,10 @@ ngx-simplebar {
 }
 
 ::ng-deep .simplebar-scrollbar::before {
-  background-color: white !important;
+  background-color: var(--color-primary) !important;
+  height: 90px;
+
+  @include media-breakpoint-down(xl) {
+    height: 50px;
+  }
 }

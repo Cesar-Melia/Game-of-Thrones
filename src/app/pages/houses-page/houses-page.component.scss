@@ -1,17 +1,38 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
 .c-houses {
-  margin: 0 80px;
+  margin: 35px 90px 35px 156px;
+
+  @include media-breakpoint-down(xl) {
+    margin: 35px 47px 35px 80px;
+  }
+
+  &__container {
+    margin-right: 66px;
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
+  }
+
   &__house {
-    margin: 20px 0 00;
+    margin: 0 0 70px 0;
   }
   &__link {
     text-decoration: none;
     color: var(--color-white);
   }
   &__img {
-    align-self: center;
-    width: 80%;
+    width: 248px;
+    height: 297px;
+    object-fit: cover;
+    object-position: top;
   }
+
   &__text {
+    margin-top: 28px;
     text-align: center;
   }
 }
@@ -21,5 +42,10 @@ ngx-simplebar {
 }
 
 ::ng-deep .simplebar-scrollbar::before {
-  background-color: white !important;
+  background-color: var(--color-primary) !important;
+  height: 90px;
+
+  @include media-breakpoint-down(xl) {
+    height: 50px;
+  }
 }

@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.translate.stream('HELLO').subscribe((res: string) => {});
     this.translate.stream('HOME').subscribe((res: string) => {});
 
-    router.events.subscribe((val) => {
+    router.events.subscribe(() => {
       if (window.location.href.includes('characters/')) {
         this.detailPage = true;
       } else if (window.location.href.includes('houses/')) {

@@ -58,10 +58,18 @@
   &__back-icon {
     font-size: 29px;
     margin-right: 20px;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 18px;
+    }
   }
 
   &__back-text {
     font-size: 24px;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 18px;
+    }
   }
 
   &__link {

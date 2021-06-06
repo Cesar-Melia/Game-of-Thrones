@@ -13,7 +13,7 @@ export class AppComponent {
   detailPage: boolean = false;
 
   constructor(private router: Router) {
-    router.events.subscribe((val) => {
+    router.events.subscribe(() => {
       if (window.location.href.includes('characters/')) {
         this.detailPage = true;
       } else if (window.location.href.includes('houses/')) {
@@ -21,8 +21,6 @@ export class AppComponent {
       } else {
         this.detailPage = false;
       }
-
-      console.log('detailPage = ' + this.detailPage);
     });
   }
 }
