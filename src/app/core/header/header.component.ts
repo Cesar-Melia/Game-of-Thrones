@@ -10,7 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   langs: string[] = [];
+  input: string = '';
+
   detailPage: Boolean = false;
+  gallery: Boolean = false;
 
   constructor(
     private translate: TranslateService,
@@ -26,12 +29,19 @@ export class HeaderComponent implements OnInit {
     this.translate.stream('HOME').subscribe((res: string) => {});
 
     router.events.subscribe(() => {
-      if (window.location.href.includes('characters/')) {
+      this.detailPage = false;
+      this.gallery = false;
+
+      if (
+        window.location.href.includes('characters/') ||
+        window.location.href.includes('houses/')
+      ) {
         this.detailPage = true;
-      } else if (window.location.href.includes('houses/')) {
-        this.detailPage = true;
-      } else {
-        this.detailPage = false;
+      } else if (
+        window.location.href.includes('characters') ||
+        window.location.href.includes('houses')
+      ) {
+        this.gallery = true;
       }
     });
   }
@@ -48,5 +58,7 @@ export class HeaderComponent implements OnInit {
     this._location.back();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.input);
+  }
 }
