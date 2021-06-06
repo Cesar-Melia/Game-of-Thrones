@@ -1,33 +1,17 @@
 import { Injectable } from '@angular/core';
-import { CharactersService } from './characters.service';
-import { HousesService } from './houses.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FinderService {
-  items: any;
-  selectedItems: any[] = [];
+  private messageSource = new BehaviorSubject('');
+  currentMessage = this.messageSource.asObservable();
 
-  constructor(
-    private charactersService: CharactersService,
-    private housesService: HousesService
-  ) {}
+  constructor() {}
 
-  setItems(originalItems: any): void {
-    this.items = originalItems;
-    console.log('Ha entrado en setItems: ', this.items);
-  }
-
-  filterItems(inputText: string): any {
-    this.selectedItems = this.items.filter((item: any) =>
-      item.name.includes(inputText)
-    );
-
-    console.log('Esta es la seleccion : ', this.selectedItems);
-  }
-
-  returnSelectedItems(): any {
-    return this.selectedItems;
+  changeMessage(message: string) {
+    console.log('Service : ', message);
+    this.messageSource.next(message);
   }
 }

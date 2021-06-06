@@ -9,6 +9,7 @@ import { HousesService } from 'src/app/shared/Services/houses.service';
 })
 export class HousesPageComponent implements OnInit {
   houses: any;
+  message: any;
 
   constructor(
     private housesService: HousesService,
@@ -17,10 +18,14 @@ export class HousesPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.housesService.getHouses().subscribe((housesData: any) => {
-      console.log(housesData);
-
       this.houses = housesData.filter((house: any) => house.logoURL);
-      // this.finderService.setItems(this.houses);
+
+      this.finderService.currentMessage.subscribe((message) => {
+        this.houses = housesData.filter((house: any) => house.logoURL);
+        this.houses = this.houses.filter((character: any) =>
+          character.name.toLowerCase().includes(message.toLowerCase())
+        );
+      });
     });
   }
 }

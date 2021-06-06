@@ -10,6 +10,7 @@ import { FinderService } from 'src/app/shared/Services/finder.service';
 export class CharactersPageComponent implements OnInit {
   characters: any;
   titleClass: string = 'c-gallery__title--hide';
+  message: any;
 
   constructor(
     private charactersService: CharactersService,
@@ -18,9 +19,13 @@ export class CharactersPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.charactersService.getCharacters().subscribe((charactersData: any) => {
-      console.log(charactersData);
       this.characters = charactersData;
-      // this.finderService.setItems(this.characters);
+      this.finderService.currentMessage.subscribe((message) => {
+        this.characters = charactersData;
+        this.characters = this.characters.filter((character: any) =>
+          character.name.toLowerCase().includes(message.toLowerCase())
+        );
+      });
     });
   }
 }

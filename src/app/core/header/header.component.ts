@@ -14,9 +14,8 @@ export class HeaderComponent implements OnInit {
   langs: string[] = [];
   detailPage: Boolean = false;
   gallery: Boolean = false;
+  message: any;
   input: any;
-
-  @Output() searchInput = new EventEmitter<string>();
 
   constructor(
     private translate: TranslateService,
@@ -62,14 +61,14 @@ export class HeaderComponent implements OnInit {
     this._location.back();
   }
 
-  ngOnInit(): void {}
-
-  searchThis() {
-    this.searchInput.emit(this.input);
+  ngOnInit(): void {
+    this.finderService.currentMessage.subscribe(
+      (message) => (this.message = message)
+    );
   }
 
-  inputChange(): void {
-    this.finderService.filterItems(this.input);
-    console.log(this.input);
+  newMessage() {
+    console.log('header input', this.input);
+    this.finderService.changeMessage(this.input);
   }
 }
