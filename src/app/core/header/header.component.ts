@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { FinderService } from 'src/app/shared/Services/finder.service';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +12,18 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   langs: string[] = [];
-  input: string = '';
-
   detailPage: Boolean = false;
   gallery: Boolean = false;
+  input: any;
+
+  @Output() searchInput = new EventEmitter<string>();
 
   constructor(
     private translate: TranslateService,
     private route: ActivatedRoute,
     private _location: Location,
-    private router: Router
+    private router: Router,
+    private finderService: FinderService
   ) {
     this.translate.setDefaultLang('en');
     this.translate.use('es');
@@ -58,7 +62,14 @@ export class HeaderComponent implements OnInit {
     this._location.back();
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  searchThis() {
+    this.searchInput.emit(this.input);
+  }
+
+  inputChange(): void {
+    this.finderService.filterItems(this.input);
     console.log(this.input);
   }
 }

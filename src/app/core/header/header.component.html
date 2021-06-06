@@ -6,7 +6,8 @@
   </div>
   <div *ngIf="!detailPage && gallery" class="c-header__search">
     <span class="c-header__search-icon icon-search"></span>
-    <input type="text" class="c-header__text" placeholder="{{'Buscar' | translate}}..." />
+    <input [(ngModel)]="input" type="text" class="c-header__text" data-function="search-bar"
+      placeholder="{{'Buscar' | translate}}..." />
     <p class="c-header__p"></p>
   </div>
 
