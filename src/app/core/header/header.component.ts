@@ -68,7 +68,6 @@ export class HeaderComponent implements OnInit {
   }
 
   newMessage() {
-    console.log('header input', this.input);
     this.finderService.changeMessage(this.input);
   }
 }

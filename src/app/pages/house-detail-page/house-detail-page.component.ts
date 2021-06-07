@@ -18,12 +18,9 @@ export class HouseDetailPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const houseName = params.get('houseName');
-      console.log(houseName);
 
       this.houseService.getHouse(houseName).subscribe((house: any) => {
-        console.log('La casa elegida es -> ' , house[0]);
         this.house = house[0];
-        console.log('pacooo --> ', this.house);
       });
     });
   }

@@ -10,6 +10,7 @@ export class ChronologyPageComponent implements OnInit {
   characters: any;
   charactersFiltered: any;
   age: number = 0;
+  firstOld: boolean = false;
 
   constructor(private charactersService: CharactersService) {}
 
@@ -19,17 +20,7 @@ export class ChronologyPageComponent implements OnInit {
         return character.age && character.age.age;
       });
 
-      this.characters = this.characters.sort((a: any, b: any) => {
-        if (a.age.age > b.age.age) {
-          return 1;
-        }
-        if (a.age.age < b.age.age) {
-          return -1;
-        }
-        return 0;
-      });
-
-      this.charactersFiltered = [...this.characters];
+      this.sortYoungFirst();
     });
   }
 
@@ -40,5 +31,43 @@ export class ChronologyPageComponent implements OnInit {
         (character: any) => character.age.age == this.age
       );
     }
+  }
+
+  changeOrder() {
+    if (this.firstOld) {
+      this.sortYoungFirst();
+      this.firstOld = false;
+    } else {
+      this.sortOldFirst();
+      this.firstOld = true;
+    }
+  }
+
+  sortYoungFirst() {
+    this.characters = this.characters.sort((a: any, b: any) => {
+      if (a.age.age > b.age.age) {
+        return 1;
+      }
+      if (a.age.age < b.age.age) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.charactersFiltered = [...this.characters];
+  }
+
+  sortOldFirst() {
+    this.characters = this.characters.sort((a: any, b: any) => {
+      if (a.age.age > b.age.age) {
+        return -1;
+      }
+      if (a.age.age < b.age.age) {
+        return 1;
+      }
+      return 0;
+    });
+
+    this.charactersFiltered = [...this.characters];
   }
 }

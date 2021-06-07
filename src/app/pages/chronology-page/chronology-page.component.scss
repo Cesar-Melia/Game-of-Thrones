@@ -5,9 +5,15 @@
   margin: 35px 90px 35px 156px;
   text-align: center;
   position: relative;
+
   @include media-breakpoint-down(xl) {
     margin: 35px 47px 35px 80px;
   }
+
+  &__separator {
+    margin-top: 83px;
+  }
+
   &__container {
     margin-right: 66px;
     @include media-breakpoint-down(xl) {
@@ -23,6 +29,8 @@
   }
 
   &__input {
+    position: fixed;
+    top: 100px;
     text-align: center;
     background-color: var(--color-background);
     border: solid 3px var(--color-primary);
@@ -33,11 +41,35 @@
     color: var(--color-primary);
     font-size: 24px;
     font-family: "georgia";
+    z-index: 999;
+
+    &:focus {
+      outline-width: 0;
+    }
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
   }
 
   &__arrow {
     margin-right: 66px;
     font-size: 42px;
+    position: fixed;
+    top: 160px;
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--color-grey);
+    }
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
   }
 
   &__age {
@@ -123,7 +155,7 @@ ngx-simplebar {
 }
 
 .contenedor .content p {
-  margin: 0;
+  margin: 0 0 10px 0;
   line-height: 22px;
   color: #ffffff;
 }
