@@ -27,7 +27,6 @@ export class HousesPageComponent implements OnInit {
       this.finderService.currentMessage.subscribe((message) => {
         this.houses = housesData.filter((house: any) => house.logoURL);
         this.houses = this.houses.filter((house: any) => {
-          console.log(house.name.toLowerCase());
           return (
             !house.name.toLowerCase().includes('amber') &&
             !house.name.toLowerCase().includes('blackmont') &&
