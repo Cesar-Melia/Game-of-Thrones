@@ -22,8 +22,8 @@ export class HousesPageComponent implements OnInit {
 
       this.finderService.currentMessage.subscribe((message) => {
         this.houses = housesData.filter((house: any) => house.logoURL);
-        this.houses = this.houses.filter((character: any) =>
-          character.name.toLowerCase().includes(message.toLowerCase())
+        this.houses = this.houses.filter((house: any) =>
+          house.name.toLowerCase().includes(message.toLowerCase())
         );
       });
     });
