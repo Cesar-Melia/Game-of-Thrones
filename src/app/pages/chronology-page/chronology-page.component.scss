@@ -51,6 +51,10 @@
     @include media-breakpoint-down(xl) {
       margin-right: 33px;
     }
+
+    &:hover {
+      border-color: var(--color-grey);
+    }
   }
 
   &__arrow {
