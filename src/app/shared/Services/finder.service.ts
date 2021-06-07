@@ -11,7 +11,6 @@ export class FinderService {
   constructor() {}
 
   changeMessage(message: string) {
-    console.log('Service : ', message);
     this.messageSource.next(message);
   }
 }

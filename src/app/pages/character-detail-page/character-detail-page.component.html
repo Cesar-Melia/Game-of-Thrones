@@ -1,4 +1,4 @@
-<section *ngIf="character" class="c-character">
+<section *ngIf="character && house" class="c-character">
     <div class="row c-character__row">
         <div class="col d-flex justify-content-center flex-column align-items-center">
             <img src="{{ character.image }}" alt="{{ character.name }}" class="c-character__img" />
@@ -8,7 +8,7 @@
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">
                 <h2 class="c-character__title-desc">{{ "CASA" | translate }}</h2>
                 <ngx-simplebar>
-                    <img height="150px" src="https://vignette.wikia.nocookie.net/gameofthrones/images/e/e5/House-Blackfyre-Main-Shield.PNG/revision/latest/scale-to-width-down/350?cb=20170511001004" alt="" />
+                    <img height="150px" src="{{ house.logoURL }}" alt="{{ house.name }}" />
                 </ngx-simplebar>
             </div>
             <div class="c-character__block col-12 col-md-6 col-lg-4 col-xxl-2">

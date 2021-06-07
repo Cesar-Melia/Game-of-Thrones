@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharactersService } from 'src/app/shared/Services/characters.service';
+import { HousesService } from 'src/app/shared/Services/houses.service';
 
 @Component({
   selector: 'app-character-detail-page',
@@ -9,9 +10,11 @@ import { CharactersService } from 'src/app/shared/Services/characters.service';
 })
 export class CharacterDetailPageComponent implements OnInit {
   character: any;
+  house: any;
 
   constructor(
     private characterService: CharactersService,
+    private houseService: HousesService,
     private route: ActivatedRoute
   ) {}
 
@@ -23,6 +26,12 @@ export class CharacterDetailPageComponent implements OnInit {
         .getCharacter(nameCharacter)
         .subscribe((character) => {
           this.character = character;
+
+          this.houseService
+            .getHouse(this.character.house)
+            .subscribe((house: any) => {
+              this.house = house[0];
+            });
         });
     });
   }
