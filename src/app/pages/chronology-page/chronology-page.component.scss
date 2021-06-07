@@ -20,6 +20,7 @@
       margin-right: 33px;
     }
   }
+
   &__img {
     object-position: top;
     width: 100px;
@@ -57,6 +58,7 @@
     font-size: 42px;
     position: fixed;
     top: 160px;
+    z-index: 999;
 
     @include media-breakpoint-down(xl) {
       margin-right: 33px;
